@@ -60,9 +60,6 @@ int main (int argc, char ** argv) {
 
 
 	move_plan.sendGoal (Goal);
-
-	
-	ROS_INFO ("action in process. To stop it press q");
 	
 	while (ros::ok()) {
 		if (move_plan.waitForResult(ros::Duration (1/(4 * des_rate)))){ //this condition is true if the action server has finished (that is to say the target position has been reached
