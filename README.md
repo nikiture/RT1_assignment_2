@@ -8,7 +8,7 @@ In this assignemnt the tasks were to implement three programs:
 Here is shown a flowchart describing the behaviour of the action client:
 
 
-![flowchart showing the behaviour of the action client implemented!](assignment2_flowchart.png)
+![flowchart showing the behaviour of the action client implemented!](assignment_2_flowchart.png)
 ## How to run it
 After the download of the files you need to compile the package using catkin_make on the ROS workspace in which the package is saved. Once that is done, running after `roscore` the launch file *assignment_2.launch* using the command:
 `roslaunch assignment_2_2023 assignment_2.launch`.
