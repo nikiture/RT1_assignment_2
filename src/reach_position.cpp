@@ -54,16 +54,7 @@ int main (int argc, char ** argv) {
 	
 	ros::param::get ("/des_x", Targ.position.x);
 	ros::param::get ("/des_y", Targ.position.y);
-	
-	/*double des_yaw;
-	ros::param::get ("/des_yaw", des_yaw);
-	tf2::Quaternion q;
-	q.setRPY (0, 0, des_yaw);
-	
-	Targ.orientation.x = q.getX();
-	Targ.orientation.y = q.getY();
-	Targ.orientation.z = q.getZ();
-	Targ.orientation.w = q.getW();*/
+
 	Goal.target_pose.pose = Targ;
 	
 
@@ -71,8 +62,6 @@ int main (int argc, char ** argv) {
 	move_plan.sendGoal (Goal);
 
 	
-	//char input = n;
-	//std::future<char> input_value;
 	ROS_INFO ("action in process. To stop it press q");
 	
 	while (ros::ok()) {
