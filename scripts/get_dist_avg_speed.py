@@ -14,7 +14,7 @@ curr_vy = []
 def callback(msg):
 	curr_x = msg.x
 	curr_y = msg.y
-	if (len (curr_vx) >= w):
+	if (len (curr_vx) >= w): #for the purpose of the server only the last w speeds are to be stored
 		curr_vx.pop (0)
 		curr_vy.pop (0)
 	curr_vx.append (msg.vel_x)
