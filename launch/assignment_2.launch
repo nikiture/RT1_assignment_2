@@ -4,7 +4,6 @@
     
     <param name = "des_x" value = "5.3"/>
     <param name = "des_y" value = "2.1"/>
-    <param name = "des_yaw" value = "1.2"/>
     <param name = "avg_win" value = "5"/>
     <node pkg = "assignment_2_2023" type = "reach_position" name = "go_to_point_client" output = "screen"/>
     <node pkg="assignment_2_2023" type="last_target.py" name="last_target"  />
