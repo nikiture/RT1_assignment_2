@@ -1,3 +1,28 @@
+/**
+*\file reach_position.cpp
+*\brief node used as action client to the action server implementation of the bug0 algorithm
+*\author Torre Nicolò
+*\param [in] des_x indicates the x-coordinate of the goal position
+*\param [in] des_y indicates the y-coordinate of the goal position
+*
+*\details
+* Subscribes to: <BR>
+* /odom
+*
+* Publishes to: <BR>
+* /act_pos_vel
+*
+* Action client to: <BR>
+* /reaching goal
+*
+* Description:
+* This node uses the desired position received as input and sends a actionlib goal message to the bug0 action server, while also reading from the odometry the current position and linear velocity and
+* publishing these values on a custom message. As of now no methods to cancel the goal before it is reached are implemented.
+*
+*/
+
+
+
 #include "ros/ros.h"
 #include <iostream>
 #include <actionlib/client/simple_action_client.h>
@@ -13,12 +38,20 @@
 
 
 
-#define des_rate 20.0			
+#define des_rate 20.0 ///< Frequency of the custom message publication		
 	
 
-assignment_2_2023::Pos_vel pub_msg;
+assignment_2_2023::Pos_vel pub_msg; ///< Custom message published periodically by the node, modified evry time a message is received from the /odom topic
 
-void process_input_odom (const nav_msgs::Odometry::ConstPtr& msg) {
+/*!
+* \brief Callback function for the /odom topic
+* \param msg pointer to the message received from the /odom topic
+* \return nothing (because subscription callback function)
+* 
+* This function when called copies the values for current position and velocity contained in the odometry message in the Pos_vel custom message to be later published
+
+*/
+void process_input_odom (const nav_msgs::Odometry::ConstPtr& msg) { 
 //here the messages from the topic /odom are read and written in the custom message Pos_vel
 	pub_msg.x = msg->pose.pose.position.x;
 	pub_msg.y = msg->pose.pose.position.y;
