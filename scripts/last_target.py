@@ -5,6 +5,9 @@
 # \author Torre Nicolò
 # \details
 #
+# \param [in] des_pos_x x-coordinate of the last sent goal's position
+#
+# \param [in] des_pos_y y-coordinate of the last sent goal's position
 #
 # Service: <BR>
 # /get_last_target

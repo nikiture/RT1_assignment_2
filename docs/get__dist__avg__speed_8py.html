@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RS1 assignment 1: scripts/get_dist_avg_speed.py File Reference</title>
+<title>RT1 assignment 2: scripts/get_dist_avg_speed.py File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">RS1 assignment 1
+   <div id="projectname">RT1 assignment 2
    </div>
+   <div id="projectbrief">Ros package containing the nodes and the custom messages and services requested for the 2nd assignment of Research track 1 in the A.A.2023/2024</div>
   </td>
  </tr>
  </tbody>
@@ -108,7 +109,15 @@ list&#160;</td><td class="memItemRight" valign="bottom"><b>get_dist_avg_speed.cu
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>server node providing the current distance from the target and the average speed of the simulated robot </p>
-<dl class="section author"><dt>Author</dt><dd>Torre Nicolò \parameter [in] avg_win integer value representing the averaging window's width (the number of speed element on which the average is computed) \parameter [in] des_pos_x x-coordinate of the goal position \parameter [in] des_pos_y y-coordinate of the goal position</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Torre Nicolò</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">avg_win</td><td>integer value representing the averaging window's width (the number of speed element on which the average is computed)</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">des_pos_x</td><td>x-coordinate of the goal position</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">des_pos_y</td><td>y-coordinate of the goal position</td></tr>
+  </table>
+  </dd>
+</dl>
 <p>Subscribes to: <br  />
  /act_pos_vel</p>
 <p>Service: <br  />

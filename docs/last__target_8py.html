@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RS1 assignment 1: scripts/last_target.py File Reference</title>
+<title>RT1 assignment 2: scripts/last_target.py File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">RS1 assignment 1
+   <div id="projectname">RT1 assignment 2
    </div>
+   <div id="projectbrief">Ros package containing the nodes and the custom messages and services requested for the 2nd assignment of Research track 1 in the A.A.2023/2024</div>
   </td>
  </tr>
  </tbody>
@@ -87,6 +88,13 @@ def&#160;</td><td class="memItemRight" valign="bottom"><b>last_target.main</b> (
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>server node providing the service of with returning the last target sent as request to the bug 0 action server </p>
 <dl class="section author"><dt>Author</dt><dd>Torre Nicolò</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">des_pos_x</td><td>x-coordinate of the last sent goal's position</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">des_pos_y</td><td>y-coordinate of the last sent goal's position</td></tr>
+  </table>
+  </dd>
+</dl>
 <p>Service: <br  />
  /get_last_target</p>
 <p>description: This node is a server providing, when requested, the last target position sent to the bug 0 action server. The requests and the responses are sent through the /get_last_target service using the Last_target custom service message </p>

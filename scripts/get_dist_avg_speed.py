@@ -3,9 +3,14 @@
 # \file get_dist_avg_speed.py
 # \brief server node providing the current distance from the target and the average speed of the simulated robot
 # \author Torre Nicolò
-# \parameter [in] avg_win integer value representing the averaging window's width (the number of speed element on which the average is computed)
-# \parameter [in] des_pos_x x-coordinate of the goal position
-# \parameter [in] des_pos_y y-coordinate of the goal position
+#
+# \param[in] avg_win integer value representing the averaging window's width (the number of speed element on which the average is computed)
+#
+# \param [in] des_pos_x x-coordinate of the goal position
+#
+#
+# \param [in] des_pos_y y-coordinate of the goal position
+#
 # \details
 #
 # Subscribes to: <BR>
