@@ -1,4 +1,4 @@
-#! /usr/bin/env
+#! /usr/bin/env python
 ## 
 # \file get_dist_avg_speed.py
 # \brief server node providing the current distance from the target and the average speed of the simulated robot
@@ -45,6 +45,7 @@ curr_vy = []
 # components to two lists of size w, removing the first values inserted in the list if the list contains more than avg_win element 
 
 def callback(msg):
+	global curr_x, curr_y
 	curr_x = msg.x
 	curr_y = msg.y
 	if (len (curr_vx) >= w): #for the purpose of the server only the last w speeds are to be stored
@@ -63,10 +64,11 @@ def callback(msg):
 # requester through the response to the request
 
 def requestresponse (req):
+	global curr_x, curr_y
 	targ_x = rospy.get_param('des_pos_x')
 	targ_y = rospy.get_param('des_pos_y')
-	dist_x = targ_x - curr_x
-	dist_y = targ_y - curr_y
+	dist_x = abs(targ_x - curr_x)
+	dist_y = abs(targ_y - curr_y)
 	avg_x = 0
 	avg_y = 0
 	for v in curr_vx:
@@ -82,9 +84,11 @@ def requestresponse (req):
 def main ():
 	rospy.init_node ('Dist_AvgSpeed_Service')
 	rospy.Subscriber ('/act_pos_vel', Pos_vel, callback)
-	serv = rospy.Service ('/Dist_avg_speed', Distance_AvgSpeed, requestresponse)
+	serv = rospy.Service ('get_dist_avg_speed', Distance_AvgSpeed, requestresponse)
+	print ("Distance and avg speed service active")
 	rospy.spin()
 	
-if __name__ == '__main__':
-	main()
-	
+#if __name__ == '__main__':
+#	main()
+
+main ()	
