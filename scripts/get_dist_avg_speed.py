@@ -39,7 +39,6 @@ curr_vy = []
 ##
 # \brief callback function for /act_pos_vel topic's messages
 # \param msg message received from the topic
-# return nothing
 #
 # This function is a callback for the /act_pos_vel topic and receives the custom message Pos_vel. When called it stores the current x and y positions in two global variables and adds the current velocity's
 # components to two lists of size w, removing the first values inserted in the list if the list contains more than avg_win element 
@@ -88,7 +87,6 @@ def main ():
 	print ("Distance and avg speed service active")
 	rospy.spin()
 	
-#if __name__ == '__main__':
-#	main()
+
 
 main ()	

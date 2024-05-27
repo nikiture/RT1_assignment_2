@@ -46,7 +46,6 @@ assignment_2_2023::Pos_vel pub_msg; ///< Custom message published periodically b
 /*!
 * \brief Callback function for the /odom topic
 * \param msg pointer to the message received from the /odom topic
-* \return nothing (because subscription callback function)
 * 
 * This function when called copies the values for current position and velocity contained in the odometry message in the Pos_vel custom message to be later published
 
